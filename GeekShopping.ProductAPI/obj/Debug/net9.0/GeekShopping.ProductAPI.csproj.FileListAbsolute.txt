@@ -133,3 +133,15 @@ C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.P
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\obj\Debug\net9.0\GeekShopping.ProductAPI.pdb
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\obj\Debug\net9.0\GeekShopping.ProductAPI.genruntimeconfig.cache
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\obj\Debug\net9.0\ref\GeekShopping.ProductAPI.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\bin\Debug\net9.0\Duende.AspNetCore.Authentication.OAuth2Introspection.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\bin\Debug\net9.0\Duende.IdentityModel.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\bin\Debug\net9.0\Microsoft.Bcl.Memory.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\bin\Debug\net9.0\Microsoft.Extensions.Caching.Hybrid.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.ProductAPI\obj\Debug\net9.0\GeekShopping.ProductAPI.sourcelink.json

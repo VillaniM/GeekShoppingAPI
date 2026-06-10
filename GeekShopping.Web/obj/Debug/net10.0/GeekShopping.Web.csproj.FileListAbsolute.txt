@@ -76,10 +76,8 @@ C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.W
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\compressed\vk52jurnzb-{0}-lzl9nlhx6b-lzl9nlhx6b.gz
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\compressed\n0pter0x01-{0}-ag7o75518u-ag7o75518u.gz
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\compressed\50xushazi4-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
-C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\compressed\jstkakjsan-{0}-0i3buxo5is-0i3buxo5is.gz
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\compressed\qpipp73m4q-{0}-o1o13a6vjx-o1o13a6vjx.gz
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\compressed\jcmka5dlju-{0}-ttgo8qnofa-ttgo8qnofa.gz
-C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\compressed\g4mz316gf7-{0}-2z0ns9nrw6-2z0ns9nrw6.gz
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\compressed\6jsfgfvpte-{0}-muycvpuwrr-muycvpuwrr.gz
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\compressed\tz63su1gkt-{0}-87fc7y1x7t-87fc7y1x7t.gz
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\compressed\f1dzk8hx30-{0}-mlv21k5csn-mlv21k5csn.gz
@@ -95,3 +93,6 @@ C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.W
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\GeekShopping.Web.pdb
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\GeekShopping.Web.genruntimeconfig.cache
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\ref\GeekShopping.Web.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\GeekShopping.Web.sourcelink.json
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\compressed\jstkakjsan-{0}-24vnrottgm-24vnrottgm.gz
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\compressed\g4mz316gf7-{0}-as1eizkgc8-as1eizkgc8.gz
