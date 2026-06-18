@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Identity;
+using GeekShopping.IdentityServer.Model;
 
 namespace GeekShopping.IdentityServer.MainModule.ExternalLogin;
 
@@ -19,7 +21,9 @@ namespace GeekShopping.IdentityServer.MainModule.ExternalLogin;
 [SecurityHeaders]
 public class Callback : PageModel
 {
-    private readonly TestUserStore _users;
+    private readonly UserManager<ApplicationUser> _userManager;
+    private readonly SignInManager<ApplicationUser> _signInManager;
+    private readonly RoleManager<IdentityRole> _roleManager;
     private readonly IIdentityServerInteractionService _interaction;
     private readonly ILogger<Callback> _logger;
     private readonly IEventService _events;
@@ -28,11 +32,14 @@ public class Callback : PageModel
         IIdentityServerInteractionService interaction,
         IEventService events,
         ILogger<Callback> logger,
-        TestUserStore? users = null)
+        UserManager<ApplicationUser> userManager,
+        SignInManager<ApplicationUser> signInManager,
+        RoleManager<IdentityRole> roleManager)
     {
-        // this is where you would plug in your own custom identity management library (e.g. ASP.NET Identity)
-        _users = users ?? throw new InvalidOperationException("Please call 'AddTestUsers(TestUsers.Users)' on the IIdentityServerBuilder in Startup or remove the TestUserStore from the AccountController.");
-
+        _userManager = userManager;
+        _signInManager = signInManager;
+        _roleManager = roleManager;
+        
         _interaction = interaction;
         _logger = logger;
         _events = events;
@@ -68,17 +75,23 @@ public class Callback : PageModel
         var providerUserId = userIdClaim.Value;
 
         // find external user
-        var user = _users.FindByExternalProvider(provider, providerUserId);
+        // ✅ Substituir por isso
+        // Busca usuário pelo login externo
+        var user = await _userManager.FindByLoginAsync(provider, providerUserId);
+
         if (user == null)
         {
-            // this might be where you might initiate a custom workflow for user registration
-            // in this sample we don't show how that would be done, as our sample implementation
-            // simply auto-provisions new external user
-            //
-            // remove the user id claim so we don't include it as an extra claim if/when we provision the user
-            var claims = externalUser.Claims.ToList();
-            claims.Remove(userIdClaim);
-            user = _users.AutoProvisionUser(provider, providerUserId, claims.ToList());
+            // Auto-provisiona novo usuário externo
+            user = new ApplicationUser
+            {
+                UserName = externalUser.FindFirstValue(ClaimTypes.Email) 
+                        ?? externalUser.FindFirstValue(JwtClaimTypes.Name) 
+                        ?? providerUserId,
+                Email = externalUser.FindFirstValue(ClaimTypes.Email),
+            };
+
+            await _userManager.CreateAsync(user);
+            await _userManager.AddLoginAsync(user, new UserLoginInfo(provider, providerUserId, provider));
         }
 
         // this allows us to collect any additional claims or properties
@@ -89,9 +102,9 @@ public class Callback : PageModel
         CaptureExternalLoginContext(result, additionalLocalClaims, localSignInProps);
             
         // issue authentication cookie for user
-        var isuser = new IdentityServerUser(user.SubjectId)
+        var isuser = new IdentityServerUser(user.Id)
         {
-            DisplayName = user.Username,
+            DisplayName = user.UserName,
             IdentityProvider = provider,
             AdditionalClaims = additionalLocalClaims
         };
@@ -106,7 +119,7 @@ public class Callback : PageModel
 
         // check if external login is in the context of an OIDC request
         var context = await _interaction.GetAuthorizationContextAsync(returnUrl);
-        await _events.RaiseAsync(new UserLoginSuccessEvent(provider, providerUserId, user.SubjectId, user.Username, true, context?.Client.ClientId));
+        await _events.RaiseAsync(new UserLoginSuccessEvent(provider, providerUserId, user.Id, user.UserName, true, context?.Client.ClientId));
         Telemetry.Metrics.UserLogin(context?.Client.ClientId, provider!);
 
         if (context != null)

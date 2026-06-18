@@ -96,3 +96,14 @@ C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.W
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\GeekShopping.Web.sourcelink.json
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\compressed\jstkakjsan-{0}-24vnrottgm-24vnrottgm.gz
 C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\compressed\g4mz316gf7-{0}-as1eizkgc8-as1eizkgc8.gz
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\GeekShopping.Web.csproj.AssemblyReference.cache
+C:\Users\Marcela\Documents\Estudos\Microserviços\GeekShoppingAPI\GeekShopping.Web\obj\Debug\net10.0\GeekShop.F63D869A.Up2Date

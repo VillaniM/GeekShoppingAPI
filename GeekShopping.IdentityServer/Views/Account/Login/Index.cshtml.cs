@@ -7,8 +7,10 @@ using Duende.IdentityServer.Models;
 using Duende.IdentityServer.Services;
 using Duende.IdentityServer.Stores;
 using Duende.IdentityServer.Test;
+using GeekShopping.IdentityServer.Model;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -18,7 +20,9 @@ namespace GeekShopping.IdentityServer.MainModule.Login;
 [AllowAnonymous]
 public class Index : PageModel
 {
-    private readonly TestUserStore _users;
+    private readonly UserManager<ApplicationUser> _userManager;
+    private readonly SignInManager<ApplicationUser> _signInManager;
+    private readonly RoleManager<IdentityRole> _roleManager;
     private readonly IIdentityServerInteractionService _interaction;
     private readonly IEventService _events;
     private readonly IAuthenticationSchemeProvider _schemeProvider;
@@ -34,11 +38,15 @@ public class Index : PageModel
         IAuthenticationSchemeProvider schemeProvider,
         IIdentityProviderStore identityProviderStore,
         IEventService events,
-        TestUserStore? users = null)
+        UserManager<ApplicationUser> userManager,
+        SignInManager<ApplicationUser> signInManager,
+        RoleManager<IdentityRole> roleManager)
     {
         // this is where you would plug in your own custom identity management library (e.g. ASP.NET Identity)
-        _users = users ?? throw new InvalidOperationException("Please call 'AddTestUsers(TestUsers.Users)' on the IIdentityServerBuilder in Startup or remove the TestUserStore from the AccountController.");
-            
+        _userManager = userManager;
+        _signInManager = signInManager;
+        _roleManager = roleManager;
+
         _interaction = interaction;
         _schemeProvider = schemeProvider;
         _identityProviderStore = identityProviderStore;
@@ -95,12 +103,30 @@ public class Index : PageModel
 
         if (ModelState.IsValid)
         {
+            var result = await _signInManager.PasswordSignInAsync(
+                Input.Username!,
+                Input.Password!,
+                Input.RememberLogin,
+                lockoutOnFailure: false);
+
             // validate username/password against in-memory store
-            if (_users.ValidateCredentials(Input.Username, Input.Password))
+            if (result.Succeeded)
             {
-                var user = _users.FindByUsername(Input.Username);
-                await _events.RaiseAsync(new UserLoginSuccessEvent(user.Username, user.SubjectId, user.Username, clientId: context?.Client.ClientId));
-                Telemetry.Metrics.UserLogin(context?.Client.ClientId, IdentityServerConstants.LocalIdentityProvider);
+                var user = await _userManager.FindByNameAsync(Input.Username!);
+
+                if (user == null)
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid username or password");
+                    await BuildModelAsync(Input.ReturnUrl);
+                    return Page();
+                }
+
+                await _events.RaiseAsync(new UserLoginSuccessEvent(
+                    provider: "local",
+                    providerUserId: user.Id,
+                    subjectId: user.Id,
+                    name: user.UserName!,
+                    clientId: context?.Client.ClientId));
 
                 // only set explicit expiration here if user chooses "remember me". 
                 // otherwise we rely upon expiration configured in cookie middleware.
@@ -112,9 +138,9 @@ public class Index : PageModel
                 };
 
                 // issue authentication cookie with subject ID and username
-                var isuser = new IdentityServerUser(user.SubjectId)
+                var isuser = new IdentityServerUser(user.Id)
                 {
-                    DisplayName = user.Username
+                    DisplayName = user.UserName
                 };
 
                 await HttpContext.SignInAsync(isuser, props);

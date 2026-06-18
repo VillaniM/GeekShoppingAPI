@@ -1,4 +1,5 @@
 using GeekShopping.IdentityServer.Configuration;
+using GeekShopping.IdentityServer.Initializer;
 using GeekShopping.IdentityServer.Model;
 using GeekShopping.IdentityServer.Model.Context;
 using Microsoft.AspNetCore.Identity;
@@ -31,9 +32,18 @@ builder.Services.AddIdentityServer(options =>
   .AddAspNetIdentity<ApplicationUser>()
   .AddDeveloperSigningCredential();
 
+builder.Services.AddScoped<IDbInitializer, DbInitializer>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+// ✅ Executar a inicialização do banco
+using (var scope = app.Services.CreateScope())
+{
+    var dbInitializer = scope.ServiceProvider.GetRequiredService<IDbInitializer>();
+    dbInitializer.Initialize();
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
