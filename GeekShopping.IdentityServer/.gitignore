@@ -1,0 +1,133 @@
+# Ignorar arquivos temporários do Visual Studio, resultados de compilação e
+# Arquivos gerados por complementos populares do Visual Studio.
+
+# Arquivos específicos do usuário
+* .suo
+* .usuário
+* .sln.docstates
+
+# Construir resultados
+
+[ Dd ] ebug /
+[ Rr ] liberar /
+x64 /
+[ Bb ] em /
+[ Oo ] bj /
+
+# Resultados do teste MSTest
+[ Tt ] est [ Rr ] resultado * /
+[ Bb ] uild [ Ll ] og. *
+
+* _i.c
+* _p.c
+* _i.h
+* .leite
+* .meta
+* .obj
+* .pch
+* .pdb
+* .pgc
+* .pgd
+* .rsp
+* .sbr
+* .tlb
+* .tli
+* .tlh
+* .tmp
+* .tmp_proj
+* .registro
+* .vspscc
+* .vssscc
+.construções
+* .pidb
+* .registro
+* .svclog
+* .scc
+
+# Arquivos de cache do Visual C++
+ipch /
+* .aps
+* .ncb
+* .opensdf
+* .sdf
+* .cachefile
+
+# Profiler do Visual Studio
+* .psess
+* .vsp
+* .vspx
+
+# Kit de Ferramentas de Automação de Orientação
+* .gpState
+
+# ReSharper é um complemento de codificação .NET
+_ReSharper * /
+* . [ Rr ] e [ Ss ] harper
+* .DotSettings.user
+
+# Diretório Click-Once
+publicar /
+
+# Publicar saída na Web
+* .Publish.xml
+* .pubxml
+* .azurePubxml
+
+# Diretório de Pacotes NuGet
+# # TODO: Se você tiver a Restauração de Pacotes NuGet ativada, remova o comentário da próxima linha
+pacotes /
+# # TODO: Se a ferramenta que você usa requer o arquivo repositories.config, remova também o comentário da linha seguinte
+! pacotes / repositórios.config
+
+# Saída de compilação do Windows Azure
+csx /
+* .build.csdef
+
+# Diretório de pacotes de aplicativos da Windows Store
+Pacotes de aplicativos /
+
+# Outros
+SQL /
+* .Cache
+ClientBin /
+[ Ss ] estilo [ Cc ] op. *
+! [ Ss ] estilo [ Cc ] alvos da operação
+~$ *
+* ~
+* .dbmdl
+* . [ Pp ] ublish.xml
+
+* .configuraçõesdepublicação
+
+# Projetos RIA/Silverlight
+Código_Gerado /
+
+# Faça backup e gere relatórios dos arquivos resultantes da conversão de um arquivo de projeto antigo para um mais recente
+# Versão do Visual Studio. Não são necessários arquivos de backup, pois temos o Git ;-)
+_UpgradeReport_Files /
+Backup * /
+UpgradeLog * .XML
+UpgradeLog * .htm
+
+# Arquivos do SQL Server
+App_Data / * .mdf
+App_Data / * .ldf
+
+# =========================
+# Detritos do Windows
+# =========================
+
+# Caches de arquivos de imagem do Windows
+Thumbs.db
+ehthumbs.db
+
+# Arquivo de configuração da pasta
+Desktop.ini
+
+# Lixeira usada em compartilhamentos de arquivos
+$RECYCLE.BIN /
+
+# Arquivos de armazenamento de serviço da área de trabalho do Mac
+.DS_Store
+
+_NCrunch *
