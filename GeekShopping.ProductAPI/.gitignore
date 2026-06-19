@@ -1,133 +1,122 @@
 # Ignorar arquivos temporários do Visual Studio, resultados de compilação e
-# Arquivos gerados por complementos populares do Visual Studio.
+# arquivos gerados por complementos populares do Visual Studio.
 
 # Arquivos específicos do usuário
-* .suo
-* .usuário
-* .sln.docstates
+*.suo
+*.user
+*.sln.docstates
 
-# Construir resultados
+# Resultados de build
+[Dd]ebug/
+[Rr]elease/
+x64/
+[Bb]in/
+[Oo]bj/
 
-[ Dd ] ebug /
-[ Rr ] liberar /
-x64 /
-[ Bb ] em /
-[ Oo ] bj /
+# Resultados do MSTest
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
 
-# Resultados do teste MSTest
-[ Tt ] est [ Rr ] resultado * /
-[ Bb ] uild [ Ll ] og. *
-
-* _i.c
-* _p.c
-* _i.h
-* .leite
-* .meta
-* .obj
-* .pch
-* .pdb
-* .pgc
-* .pgd
-* .rsp
-* .sbr
-* .tlb
-* .tli
-* .tlh
-* .tmp
-* .tmp_proj
-* .registro
-* .vspscc
-* .vssscc
-.construções
-* .pidb
-* .registro
-* .svclog
-* .scc
+*_i.c
+*_p.c
+*_i.h
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.log
+*.svclog
+*.scc
 
 # Arquivos de cache do Visual C++
-ipch /
-* .aps
-* .ncb
-* .opensdf
-* .sdf
-* .cachefile
+ipch/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
 
-# Profiler do Visual Studio
-* .psess
-* .vsp
-* .vspx
+# Visual Studio Profiler
+*.psess
+*.vsp
+*.vspx
 
-# Kit de Ferramentas de Automação de Orientação
-* .gpState
+# Guidance Automation Toolkit
+*.gpState
 
-# ReSharper é um complemento de codificação .NET
-_ReSharper * /
-* . [ Rr ] e [ Ss ] harper
-* .DotSettings.user
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
 
-# Diretório Click-Once
-publicar /
+# ClickOnce
+publish/
 
-# Publicar saída na Web
-* .Publish.xml
-* .pubxml
-* .azurePubxml
+# Publicação Web
+*.Publish.xml
+*.pubxml
+*.azurePubxml
 
-# Diretório de Pacotes NuGet
-# # TODO: Se você tiver a Restauração de Pacotes NuGet ativada, remova o comentário da próxima linha
-pacotes /
-# # TODO: Se a ferramenta que você usa requer o arquivo repositories.config, remova também o comentário da linha seguinte
-! pacotes / repositórios.config
+# NuGet
+packages/
+!packages/repositories.config
 
-# Saída de compilação do Windows Azure
-csx /
-* .build.csdef
+# Windows Azure
+csx/
+*.build.csdef
 
-# Diretório de pacotes de aplicativos da Windows Store
-Pacotes de aplicativos /
+# Windows Store
+AppPackages/
 
 # Outros
-SQL /
-* .Cache
-ClientBin /
-[ Ss ] estilo [ Cc ] op. *
-! [ Ss ] estilo [ Cc ] alvos da operação
-~$ *
-* ~
-* .dbmdl
-* . [ Pp ] ublish.xml
+sql/
+*.Cache
+ClientBin/
+[Ss]tyle[Cc]op.*
+![Ss]tyle[Cc]op.targets
+~$*
+*~
+*.dbmdl
+*.[Pp]ublish.xml
+*.publishsettings
 
-* .configuraçõesdepublicação
+# RIA/Silverlight
+Generated_Code/
 
-# Projetos RIA/Silverlight
-Código_Gerado /
+# Relatórios de upgrade
+_UpgradeReport_Files/
+Backup*/
+UpgradeLog*.XML
+UpgradeLog*.htm
 
-# Faça backup e gere relatórios dos arquivos resultantes da conversão de um arquivo de projeto antigo para um mais recente
-# Versão do Visual Studio. Não são necessários arquivos de backup, pois temos o Git ;-)
-_UpgradeReport_Files /
-Backup * /
-UpgradeLog * .XML
-UpgradeLog * .htm
-
-# Arquivos do SQL Server
-App_Data / * .mdf
-App_Data / * .ldf
+# SQL Server
+App_Data/*.mdf
+App_Data/*.ldf
 
 # =========================
-# Detritos do Windows
+# Windows
 # =========================
-
-# Caches de arquivos de imagem do Windows
 Thumbs.db
 ehthumbs.db
-
-# Arquivo de configuração da pasta
 Desktop.ini
+$RECYCLE.BIN/
 
-# Lixeira usada em compartilhamentos de arquivos
-$RECYCLE.BIN /
-
-# Arquivos de armazenamento de serviço da área de trabalho do Mac
+# Mac
 .DS_Store
 
-_NCrunch *
+_NCrunch*

@@ -26,6 +26,8 @@ builder.Services.AddIdentityServer(options =>
     options.Events.RaiseFailureEvents = true;
     options.Events.RaiseSuccessEvents = true;
     options.EmitStaticAudienceClaim = true;
+    options.UserInteraction.LoginUrl = "/Account/Login/Index";
+    options.UserInteraction.LogoutUrl = "/Account/Logout/Index";
 }).AddInMemoryIdentityResources(IdentityConfiguration.IdentityResources)
   .AddInMemoryApiScopes(IdentityConfiguration.ApiScopes)
   .AddInMemoryClients(IdentityConfiguration.Clients)
@@ -34,7 +36,7 @@ builder.Services.AddIdentityServer(options =>
 
 builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -61,10 +63,6 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
-
+app.MapRazorPages();
 
 app.Run();
