@@ -15,12 +15,20 @@ public class ProductController : Controller
         _productService = productService ?? throw new ArgumentNullException(nameof(productService));
     }
 
-    [Authorize]
     public async Task<IActionResult> ProductIndex()
     {
-        var accessToken = await HttpContext.GetTokenAsync("access_token");
-        var products = await _productService.FindAllProducts(accessToken);
+        var products = await _productService.FindAllProducts("");
         return View(products);
+    }
+
+    [Authorize]
+    [HttpGet]
+    public async Task<IActionResult> ProductDetails(int id)
+    {
+        var accessToken = await HttpContext.GetTokenAsync("access_token");
+        var product = await _productService.FindProductById(id, accessToken);
+        if (product == null) return NotFound();
+        return View(product);
     }
 
 

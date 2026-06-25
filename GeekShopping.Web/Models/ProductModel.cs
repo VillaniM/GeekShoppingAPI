@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace GeekShopping.Web.Models;
 
 public class ProductModel
@@ -8,4 +10,20 @@ public class ProductModel
     public string Description { get; set; }
     public string CategoryName { get; set; }
     public string ImageUrl { get; set; }
+    [Range(1, 100)]
+    public int Count { get; set; } = 1;
+
+    public string SubstringName()
+    {
+        if (Name.Length > 25)
+            return Name.Substring(0, 25) + "...";
+        return Name;
+    }
+
+    public string SubstringDescription()
+    {
+        if (Description.Length > 100)
+            return Description.Substring(0, 100) + "...";
+        return Description;
+    }
 }
